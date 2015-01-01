@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red52\green52\blue52;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww7340\viewh12600\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs36 \cf0 Linha do tempo\
+\
+- Como demoro muito entre uma altera\'e7\'e3o e outra, resolvi fazer esta timeline pra n\'e3o me perder e saber qual foi a \'faltima coisa feita e o que devo fazer a seguir.\
+\
+- Os aquivos iniciais foram criados em 20 de dezembro de 2014.\
+\
+31 de dezembro de 2014:\
+- alterei a classe rez para conter o id, que parece ser best practice em sqlite; sem isso, o override do oncreate na classe MySQLiteHelper n\'e3o funcionaria, j\'e1 que a primeira coisa que ele providencia \'e9 o id. \'c9 interessante que eu, totalmente sem no\'e7\'e3o, tinha trocado o CREATE TABLE por CRIAR TABELA, pq n\'e3o sabia que este j\'e1 era um comando do SQLite, que ao final do oncreate ser\'e1 passado ao db.execSQL, que criar\'e1 a database.\
+- mudei a String dataString para dataNascimento, pq n\'e3o sei como tratar a data dentro nem do android, nem do sqlite.  Farei como string e depois que souber, volto e arrumo.\
+- 
+\fs28 \cf2 	\'95	\expnd0\expndtw0\kerning0
+In the same file \'93MySQLiteHelper.java\'94 we will add 5 methods\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\parhyphenfactor20
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+addBook(Book book)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+getBook(int id)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3	}\expnd0\expndtw0\kerning0
+getAllBooks()\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	4	}\expnd0\expndtw0\kerning0
+update(Book book)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	5	}\expnd0\expndtw0\kerning0
+delete(Book book)\
+\pard\tx566\pardeftab720\parhyphenfactor20
+
+\fs36 \cf0 \kerning1\expnd0\expndtw0 Quando eu ia criar os m\'e9todos acima, tive que importar a classe rez, e isso criou problemas, o androidStudio insiste que eu crie uma classe de teste\'85\
+\
+escolhi \'93import on the fly\'94 e sumiram os importa que ainda n\'e3o usei, juntamente com o import da classe res. Pau pra frente.\
+\
+o tutorial n\'e3o cita getters and setters por ser muito comum, acho. Toda ide faz automaticamente, acho.  N\'e3o gostei deles aparecerem logo no come\'e7o, mas n\'e3o vou mexer, vai que estraga kkkkkkkk\
+\
+classe MySQLHelper ajustada para reses sem erros!! nenhum erro e nenhum aviso!!\
+\
+- pr\'f3ximo passo: criar interface de entrada de dados e passar os dados para a database. Se tiver como, ver os resultados em uma atividade pr\'f3pria pra isso, se n\'e3o, ver pelo log, como no tutorial de SQL usado.\
+\
+\
+}
